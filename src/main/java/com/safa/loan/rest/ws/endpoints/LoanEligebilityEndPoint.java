@@ -19,7 +19,7 @@ public class LoanEligebilityEndPoint {
 	@Autowired
 	private LoanEligibiltyService service;
 	
-	@PostMapping(path ="/getLoanStatus", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE}
+	@PostMapping(path ="/loan/status", produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE}
 										,consumes = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<WsResponse>   getLoanStatus(@RequestBody CustomerRequest customerRequest) {
 		return new ResponseEntity<WsResponse>(service.checkLoanEligibilty(customerRequest), HttpStatus.OK);
